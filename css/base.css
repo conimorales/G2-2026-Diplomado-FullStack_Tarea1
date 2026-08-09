@@ -1,0 +1,22 @@
+:root {
+    --fuente-titulo: 'Poppins', sans-serif;
+    --fuente-texto: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--fuente-titulo);
+}
+
+body {
+    font-family: var(--fuente-texto);
+}
+
+.text-small {
+    font-size: 14px;
+}
+
+.comparacion-tipos .card {
+    height: 100%;
+}
