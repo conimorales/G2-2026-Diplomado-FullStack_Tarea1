@@ -17,8 +17,8 @@ formulario.addEventListener("submit", (e) => {
     formulario.reset();
 });
 btnCancelar.addEventListener("click", () => {
-    console.log("Cancelar presionado, recargando página...");
-    setTimeout(() => {
-        location.reload();
-    }, 1000);
+    console.log("Cancelar presionado, limpiando formulario...");
+    formulario.reset();
+    mensaje.classList.add("d-none");
+    /* se usa para ocultar un elemento web por completo, oculta el mensaje de envío */
 });

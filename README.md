@@ -5,12 +5,14 @@
 ## Integrantes
 
 - Constanza Morales
-- [Nombre 2]
+
 
 
 ## Descripción
 
 Plataforma de gestión de proyectos TI: permite clasificar requerimientos, seguir el avance de cada CER y controlar el presupuesto asignado versus utilizado de cada proyecto, desde que se crea la solicitud hasta que se cierra.
+
+![Vista del proyecto](img/web.png)
 
 ## Páginas
 
@@ -38,25 +40,58 @@ Este proyecto usa `fetch()` para cargar componentes (navbar, footer, tabla), por
 Pasos a seguir:
 1. git clone https://github.com/conimorales/G2-2026-Diplomado-FullStack_Tarea1.git
 2.  cd G2-2026-Diplomado-FullStack_Tarea1
-3. Luego abre `http://localhost:8000/home.html` en el navegador.
+3. Luego abre `http://localhost:8000/index.html` en el navegador.
 
-Alternativa: si usas VS Code, instala la extensión **Live Server**, clic derecho sobre `home.html` → "Open with Live Server".
+Alternativa: si usas VS Code, instala la extensión **Live Server**, clic derecho sobre `index.html` → "Open with Live Server".
 
-## Estructura del proyecto
-├── home.html
-├── listado-proyectos.html
-├── detalle-proyecto.html
-├── contacto.html
-├── componentes/
-│ ├── navbar.html
-│ ├── footer.html
-│ └── tabla-proyectos.html
-├── css/
-│ └── base.css ← CSS propio, cargado DESPUÉS de Bootstrap
-├── javascript/
-│ ├── navbar.js
-│ ├── footer.js
-│ └── proyectos.js ← Eventos y JS propio
-├── data/
-│ └── proyecto.json
-└── img/
+
+
+
+
+## 📁 Estructura del proyecto
+
+*** componentes ***
+en esta carpeta va el detalle de cada componente en el caso que se utilice la vista html en más de una tabla, con el fin de optimizar trabajo y no duplicar código
+- footer.html este es el diseño del footer completo
+- navbar.html este es el diseño del navbar completo
+- request-detail.html este es el diseño de la tabla de detalle de solicitudes
+- project-table.html este es listado de proyectos 
+
+*** css ***
+en esta carpeta se define el detalle del css utilizado 
+- base.css es el detalle de css aplicado a todas las vistas 
+- contact.css es el css aplicado a la vista contacto, solamente
+- index.css es el css aplicado en home de la 
+
+*** data ***
+en esta carpeta se cargo información de prueba para las tablas en formato json, con el fin de aplicar
+- project-list.json  Listado de proyectos
+- request-details.json Detalle de solicitudes 
+
+*** img ***
+carpeta donde se guardan las imágenes
+- Img1.png
+- logo_proyecto.png
+- Proyecto presupuesto.png
+- Web.png
+
+*** javascript ***
+│   ├── contact.js
+│   ├── footer.js
+│   ├── navbar.js
+│   ├── project-list.js
+│   └── request-details.js
+
+
+*** Tarea 1 *** 
+Pautas de evaluación
+- evaluacion-1-html-css-js.pdf
+- rubrica-correccion-evaluacion-1.pdf
+
+*** OTROS ***
+- contact.html vista donde se ingresan solicitudes
+- document-manager.html vista donde se pretende cargar documentos y guardarlos en la bbdd, en este caso aún no se ha implementado esta vista 
+- index.html vista genérica del proyecto
+- project-list.html html de listado de proyectos 
+- request-detail.html html de detalle de solicitudes
+- Propuesta planificación de soporte.pptx presentación explicada de lo que se quiere lograr finalmente
