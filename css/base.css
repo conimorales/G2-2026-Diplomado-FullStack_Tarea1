@@ -1,22 +1,103 @@
 :root {
     --fuente-titulo: 'Poppins', sans-serif;
     --fuente-texto: 'Inter', sans-serif;
-}
-
-h1,
-h2,
-h3 {
-    font-family: var(--fuente-titulo);
+    --color-primary: #5B4FE0;
+    --color-primary-dark: #4438C4;
+    --color-primary-light: #EEEBFC;
+    --color-blue: #3B82F6;
+    --color-blue-light: #EAF2FE;
+    --color-green: #17A673;
+    --color-green-light: #E9F8F1;
+    --color-red: #E0503A;
+    --color-red-light: #FCEBE8;
+    --color-ink: #1E1B3A;
+    --color-text: #4B4869;
+    --color-muted: #8583A3;
+    --color-border: #E7E5F5;
+    --color-surface: #F7F6FD;
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
 }
 
 body {
     font-family: var(--fuente-texto);
+    color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.card-title {
+    font-family: var(--fuente-titulo);
+    color: var(--color-ink);
 }
 
 .text-small {
     font-size: 14px;
 }
 
+.dataTable {
+    font-size: 12px;
+}
+
 .comparacion-tipos .card {
     height: 100%;
+}
+
+.section1,
+.section2,
+.section3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* ---------- Navbar ---------- */
+
+nav.navbar {
+    border-bottom: 1px solid var(--color-border);
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.navbar-brand {
+    font-size: 14px;
+}
+
+.navbar-brand img {
+    border-radius: 8px;
+}
+
+.navbar .nav-link {
+    color: var(--color-text);
+    font-size: 14px;
+}
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    color: var(--color-primary);
+}
+
+
+/* esto es para cuando se hagan los inicios de sesión 
+.btn-outline-success {
+    color: var(--color-primary-dark);
+    border-color: var(--color-primary);
+}
+
+.btn-outline-success:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+} */
+
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
 }

@@ -1,6 +1,6 @@
 // renderiza la tabla html
 // fetch fx de js que manda archivos al js
-fetch("componentes/tabla-proyectos.html")
+fetch("componentes/project-table.html")
     .then(response => response.text())
     .then(data => {
         // agrega la información llamada por el id
@@ -12,7 +12,7 @@ fetch("componentes/tabla-proyectos.html")
                 url: "https://cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json"
             },
             ajax: {
-                url: "./data/proyectos.json",
+                url: "./data/project-list.json",
                 dataSrc: ""
             },
             columns: [

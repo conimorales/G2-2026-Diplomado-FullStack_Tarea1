@@ -5,9 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plataforma de gestión de proyectos TI</title>
+    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- LIBRERÍA DATATABLES -->
+    <!-- <link href="https://cdn.datatables.net/v/dt/dt-3.0.1/datatables.min.css" rel="stylesheet"> -->
+    <!-- FORMATO LETRAS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FONTAWESOME ICONOS -->
+    <script src="https://kit.fontawesome.com/49ce9d820e.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/contact.css">
 
 </head>
 
@@ -15,15 +23,111 @@
 
     <header id="navbar"></header>
     <main>
-        <section>
 
 
-            <div id="footer"></div>
+        <section class="section1">
+
+            <div class="container ">
+
+                <div class="card solicitud-card shadow-sm border-0">
+                    <h5 class="text-center">
+                        Nueva Solicitud
+                    </h5>
+
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <!-- Correo -->
+                                <div class="col-md-12">
+                                    <label for="correo" class="form-label">
+                                    Correo electrónico
+                                </label>
+
+                                    <input type="email" class="form-control" id="correo" name="correo" placeholder="usuario@empresa.cl" required>
+                                </div>
+
+                                <!-- Módulo -->
+                                <div class="col-md-6">
+                                    <label for="modulo" class="form-label">
+                                    Módulo
+                                </label>
+
+                                    <select class="form-select" id="modulo" name="modulo" required>
+                                    <option value="">
+                                        Seleccionar módulo
+                                    </option>
+                                    <option value="DTE">DTE</option>
+                                    <option value="ABASTECIMIENTO">
+                                        Abastecimiento
+                                    </option>
+                                    <option value="OTRO">Otro</option>
+                                </select>
+                                </div>
+
+                                <!-- Sistema -->
+                                <div class="col-md-6">
+                                    <label for="sistema" class="form-label">
+                                    Sistema
+                                </label>
+
+                                    <select class="form-select" id="sistema" name="sistema" required>
+                                    <option value="">
+                                        Seleccionar sistema
+                                    </option>
+                                    <option value="SIGA">SIGA</option>
+                                    <option value="OTRO">Otro</option>
+                                </select>
+                                </div>
+
+
+                                <!-- Nombre -->
+                                <div class="col-12">
+                                    <label for="nombre" class="form-label">
+                                    Nombre de la solicitud
+                                </label>
+
+                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej: Reclasificación de mano de obra" required>
+                                </div>
+
+                                <!-- Descripción -->
+                                <div class="col-12">
+                                    <label for="descripcion" class="form-label">
+                                    Descripción
+                                </label>
+
+                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="4" placeholder="Describa detalladamente la solicitud..." required></textarea>
+                                </div>
+
+                            </div>
+
+                            <div class="d-flex justify-content-end btn-margin-top">
+
+                                <button type="reset" class="btn btn-outline-secondary ">
+                                Cancelar </button>
+
+                                <button type="submit" class="btn btn-primary">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Enviar solicitud </button>
+
+                            </div>
+                            <div id="mensajeConfirmacion" class="alert alert-success d-none mt-3" role="alert">
+                                ✅ Tu solicitud fue enviada correctamente.
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
         </section>
+        <div class="container" id="footer"></div>
+
     </main>
 
     <script src="javascript/navbar.js"></script>
     <script src="javascript/footer.js"></script>
+    <script src="javascript/contact.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 </body>
