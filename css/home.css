@@ -1,0 +1,129 @@
+:root {
+    --fuente-titulo: 'Poppins', sans-serif;
+    --fuente-texto: 'Inter', sans-serif;
+    --color-primary: #5B4FE0;
+    --color-primary-dark: #4438C4;
+    --color-primary-light: #EEEBFC;
+    --color-blue: #3B82F6;
+    --color-blue-light: #EAF2FE;
+    --color-green: #17A673;
+    --color-green-light: #E9F8F1;
+    --color-red: #E0503A;
+    --color-red-light: #FCEBE8;
+    --color-ink: #1E1B3A;
+    --color-text: #4B4869;
+    --color-muted: #8583A3;
+    --color-border: #E7E5F5;
+    --color-surface: #F7F6FD;
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+}
+
+.badge.text-bg-primary {
+    background-color: var(--color-primary-light) !important;
+    color: var(--color-primary-dark) !important;
+    font-weight: 600;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    padding: 6px 12px;
+}
+
+.section1 h5 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 12px 0 8px;
+}
+
+
+/* ---------- Carousel "Avance de proyectos" ---------- */
+
+#carouselProyectos .card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+#carouselProyectos .progress {
+    height: 8px;
+    border-radius: 999px;
+    background-color: var(--color-surface);
+}
+
+#carouselProyectos .progress-bar {
+    background-color: var(--color-primary);
+}
+
+#carouselProyectos strong {
+    color: var(--color-ink);
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: var(--color-primary);
+}
+
+
+/*Color por tipo de clasificación */
+
+.card-tipo-soporte {
+    border-top: 4px solid var(--color-muted);
+}
+
+.card-tipo-soporte .card-header {
+    color: var(--color-ink);
+}
+
+.card-tipo-directa {
+    border-top: 4px solid var(--color-blue);
+}
+
+.card-tipo-directa .card-header {
+    color: var(--color-primary-dark);
+}
+
+.card-tipo-opex {
+    border-top: 4px solid var(--color-green);
+}
+
+.card-tipo-opex .card-header {
+    color: var(--color-green);
+}
+
+.card-tipo-capex {
+    border-top: 4px solid var(--color-red);
+}
+
+.card-tipo-capex .card-header {
+    color: var(--color-red);
+}
+
+
+/* Caja destacada de impacto CAPEX dentro de cada card */
+
+.capex-box {
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    font-size: 0.7rem;
+    margin-top: 14px;
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+.card-tipo-directa .capex-box {
+    background: var(--color-blue-light);
+    color: var(--color-primary-dark);
+}
+
+.card-tipo-opex .capex-box {
+    background: var(--color-green-light);
+    color: var(--color-green);
+}
+
+.card-tipo-capex .capex-box {
+    background: var(--color-red-light);
+    color: var(--color-red);
+}
+
+.capex-box strong {
+    display: block;
+    margin-bottom: 2px;
+}
