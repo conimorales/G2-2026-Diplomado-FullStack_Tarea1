@@ -11,8 +11,11 @@
 ## Descripción
 
 Plataforma de gestión de proyectos TI: permite clasificar requerimientos, seguir el avance de cada CER y controlar el presupuesto asignado versus utilizado de cada proyecto, desde que se crea la solicitud hasta que se cierra.
+Se utilizo datatables el 
 
-![Vista del proyecto](img/web.png)
+##  Vista del proyecto 
+![Vista del proyecto](./img/web.png)
+
 
 ## Páginas
 
@@ -61,7 +64,7 @@ en esta carpeta va el detalle de cada componente en el caso que se utilice la vi
 en esta carpeta se define el detalle del css utilizado 
 - base.css es el detalle de css aplicado a todas las vistas 
 - contact.css es el css aplicado a la vista contacto, solamente
-- index.css es el css aplicado en home de la 
+- home.css es el css aplicado en home 
 
 *** data ***
 en esta carpeta se cargo información de prueba para las tablas en formato json, con el fin de aplicar
@@ -76,11 +79,12 @@ carpeta donde se guardan las imágenes
 - Web.png
 
 *** javascript ***
-│   ├── contact.js
-│   ├── footer.js
-│   ├── navbar.js
-│   ├── project-list.js
-│   └── request-details.js
+archivos js
+- contact.js detalla funcionamiento de formulario js 
+-  footer.js llama al footer 
+- navbar.js llama el id del navbar
+- project-list.js se utilizo para traer la información del json y unir la información con la tabla, además cuenta con un filtro en el estado de proyecto
+- request-details.js mismo funcionamiento que project list
 
 
 *** Tarea 1 *** 
