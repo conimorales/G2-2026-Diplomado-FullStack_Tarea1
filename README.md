@@ -14,7 +14,7 @@ Plataforma de gestión de proyectos TI: permite clasificar requerimientos, segui
 Se utilizo datatables el 
 
 ##  Vista del proyecto 
-![Vista del proyecto](./img/web.png)
+![Vista del proyecto](./img/Web.png)
 
 
 ## Páginas
@@ -22,7 +22,6 @@ Se utilizo datatables el
 ### Home
 "Plataforma de gestión de proyectos TI" 
 Explica cuales proyectos se van a considerar por su clasificación
-Incluye 2-3 cards destacando categorías (Nuevo Proyecto CAPEX, Mejora OPEX, Soporte).
 
 ### Listado de proyectos
 Tabla con: ID, Proyecto, Sistema, Estado, Proveedor, Presupuesto asignado.
