@@ -42,7 +42,9 @@ Este proyecto usa `fetch()` para cargar componentes (navbar, footer, tabla), por
 Pasos a seguir:
 1. git clone https://github.com/conimorales/G2-2026-Diplomado-FullStack_Tarea1.git
 2.  cd G2-2026-Diplomado-FullStack_Tarea1
-3. Luego abre `http://localhost:8000/index.html` en el navegador.
+3. Levanta un servidor local. Puedes usar:
+   - **VS Code**: instala la extensión Live Server, clic derecho sobre `index.html` → "Open with Live Server"
+
 
 Alternativa: si usas VS Code, instala la extensión **Live Server**, clic derecho sobre `index.html` → "Open with Live Server".
 
@@ -98,3 +100,13 @@ Pautas de evaluación
 - project-list.html html de listado de proyectos 
 - request-detail.html html de detalle de solicitudes
 - Propuesta planificación de soporte.pptx presentación explicada de lo que se quiere lograr finalmente
+
+
+## Librerías utilizadas
+
+Además de Bootstrap 5, se usó **DataTables** para las tablas de "Listado de proyectos" y "Detalle de solicitudes" (paginación, búsqueda y filtros).
+
+Se usó la build **vanilla JS de DataTables (v3.0.1)**, sin jQuery — se generó desde el
+[Download Builder oficial](https://datatables.net/download/) seleccionando "DataTables" sin el paquete jQuery
+
+No se incluye jQuery en ningún archivo del proyecto: la inicialización se hace con la API nativa `new DataTable(...)` introducida en DataTables 2.x. DataTables es una librería de utilidad para tablas (como Google Fonts o Font Awesome), no un framework de JS/CSS como React, Vue o Tailwind, por lo que no reemplaza ni compite con Bootstrap.
