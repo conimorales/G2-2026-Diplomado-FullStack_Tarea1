@@ -128,11 +128,11 @@
     margin-bottom: 2px;
 }
 
-.class-a1,
-.class-a2 {
-    display: inline-block;
-    width: 350px;
-    padding: 15px 20px;
+
+
+.class-a1, .class-a2 {
+    max-width: 350px;
+    width: 100%;
     text-align: center;
 }
 
