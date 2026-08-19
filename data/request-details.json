@@ -1,8 +1,8 @@
 [{
         "id": 1,
-        "nombre": "Dm Plantas - Mapeo de códigos",
-        "descripcion": "El foco de este proyecto es mapear y actualizar los códigos de especie entre SPEX y JD Edwards, asegurando consistencia de catálogo entre ambos sistemas.",
-        "sistema": "SIGA",
+        "nombre": "Mapeo de códigos",
+        "descripcion": "El foco de este proyecto es mapear",
+        "sistema": "SAP",
         "cer": "1233",
         "estado": "En proceso",
         "impactoFinanciero": true,
@@ -10,9 +10,9 @@
     },
     {
         "id": 2,
-        "nombre": "Dm Plantas - Reportes adicionales",
+        "nombre": "Analítica",
         "descripcion": "Agregar items adicionales a los reportes existentes para mejorar la visibilidad de indicadores clave del área.",
-        "sistema": "SPEX",
+        "sistema": "Power BI",
         "cer": "1234",
         "estado": "Finalizado",
         "impactoFinanciero": false,
@@ -20,42 +20,12 @@
     },
     {
         "id": 3,
-        "nombre": "Reclasificación de mano de obra",
-        "descripcion": "Ampliación del sistema SIGA para soportar nuevos tipos de reclasificación de mano de obra e insumos, incluyendo provisiones reversables.",
-        "sistema": "SIGA",
+        "nombre": "Reclasificación",
+        "descripcion": ".",
+        "sistema": "SAP",
         "cer": "1240",
         "estado": "En proceso",
         "impactoFinanciero": true,
         "fechaCreacion": "2026-07-20"
-    },
-    {
-        "id": 4,
-        "nombre": "Migración reportería a Fabric",
-        "descripcion": "Evaluación técnica y planificación de la migración de la reportería actual de Power BI hacia Microsoft Fabric.",
-        "sistema": "Power BI",
-        "cer": "1245",
-        "estado": "En proceso",
-        "impactoFinanciero": true,
-        "fechaCreacion": "2026-06-05"
-    },
-    {
-        "id": 5,
-        "nombre": "Kardex a nivel de material - SPEX",
-        "descripcion": "Implementación de Kardex a nivel de material dentro de los proyectos SPEX, categoría dominante del portafolio.",
-        "sistema": "SPEX",
-        "cer": "1219",
-        "estado": "Finalizado",
-        "impactoFinanciero": false,
-        "fechaCreacion": "2026-04-12"
-    },
-    {
-        "id": 6,
-        "nombre": "Clasificación de materiales SAP",
-        "descripcion": "Definición de categorías para materiales/ítems en SAP (Hardware TI, Insumos de oficina, Equipamiento médico), distinguiendo ítems con recepción y OC directa.",
-        "sistema": "SAP",
-        "cer": "1250",
-        "estado": "En proceso",
-        "impactoFinanciero": true,
-        "fechaCreacion": "2026-07-28"
     }
 ]
