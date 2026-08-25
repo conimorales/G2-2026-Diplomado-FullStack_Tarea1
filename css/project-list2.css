@@ -1,12 +1,29 @@
 .csearch {
-    border: 1px solid #ccc;
-    padding: 8px 12px;
-    border-radius: 4px;
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 4px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .csearch:focus {
-    border-color: var(--bs-primary);
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.table-responsive {
+  position: relative;
+}
+
+.table-responsive::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 24px;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.08));
+  pointer-events: none;
 }
