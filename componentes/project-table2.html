@@ -1,79 +1,99 @@
 <div class="row g-3 mb-3">
-  <div class="col-12 col-md-4 offset-md-8">
-    <input type="text" class="csearch form-control" data-table="ctable" placeholder="Buscador" />
-  </div>
+    <div class="col-12 col-md-4 offset-md-8">
+        <input type="text" class="csearch form-control" data-table="ctable" placeholder="Buscador" />
+    </div>
 </div>
 
-<table class="ctable table table-responsive">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Proyecto</th>
-      <th>Responsable</th>
-      <th>Estado</th>
-      <th>Presupuesto Total</th>
-      <th>Editar</th>
-    </tr>
-  </thead>
-  <tbody id="projectsBody">
-    <!-- filas normales: se llenan con JS -->
-  </tbody>
+<div class="table-responsive">
+    <table class="ctable table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Proyecto</th>
+                <th>Responsable</th>
+                <th>Estado</th>
+                <th>Presupuesto Total</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody id="projectsBody">
+            <!-- filas normales: se llenan con JS -->
+        </tbody>
 
-  <!-- Plantilla de fila de edición: ya definida en el HTML.
+        <!-- Plantilla de fila de edición: ya definida en el HTML.
        El JS solo la clona y llena los valores, no construye el markup. -->
-  <template id="edit-row-template">
-    <tr>
-      <td class="cell-id"></td>
-      <td>
-        <input type="text" class="form-control form-control-sm" id="edit-proyecto" />
-      </td>
-      <td>
-        <select class="form-select form-select-sm" id="edit-responsable">
-          <option value="José">José</option>
-          <option value="Coni">Coni</option>
-        </select>
-      </td>
-      <td>
-        <select class="form-select form-select-sm" id="edit-estado">
-          <option value="Pendiente">Pendiente</option>
-          <option value="En desarrollo">En desarrollo</option>
-          <option value="Finalizado">Finalizado</option>
-        </select>
-      </td>
-      <td>
-        <input type="number" class="form-control form-control-sm" id="edit-presupuesto" />
-      </td>
-      <td>
-        <button class="btn btn-success btn-sm" id="btn-save">Guardar</button>
-        <button class="btn btn-secondary btn-sm" id="btn-cancel">Cancelar</button>
-      </td>
-    </tr>
-  </template>
+        <template id="edit-row-template">
+      <tr>
+        <td class="cell-id"></td>
+        <td>
+          <input type="text" class="form-control form-control-sm" id="edit-proyecto" />
+        </td>
+        <td>
+          <select class="form-select form-select-sm" id="edit-responsable">
+            <option value="José">José</option>
+            <option value="Coni">Coni</option>
+          </select>
+        </td>
+        <td>
+          <select class="form-select form-select-sm" id="edit-estado">
+            <option value="Pendiente">Pendiente</option>
+            <option value="En desarrollo">En desarrollo</option>
+            <option value="Finalizado">Finalizado</option>
+          </select>
+        </td>
+        <td>
+          <input type="number" class="form-control form-control-sm" id="edit-presupuesto" />
+        </td>
+        <td>
+          <button class="btn btn-success btn-sm" id="btn-save">Guardar</button>
+          <button class="btn btn-secondary btn-sm" id="btn-cancel">Cancelar</button>
+        </td>
+      </tr>
+    </template>
 
-  <tfoot>
-    <tr>
-      <td colspan="6">
-        <div style="display: flex; justify-content: space-between; align-items: center">
-          <span id="pageInfo" style="color: #6c757d; font-size: 14px"></span>
-          <nav>
-            <ul class="pagination mb-0" id="pagination">
-              <li class="page-item" id="pag-first">
-                <a class="page-link" href="#">Primero</a>
-              </li>
-              <li class="page-item" id="pag-prev">
-                <a class="page-link" href="#">Anterior</a>
-              </li>
-              <!-- los números de página se insertan aquí -->
-              <li class="page-item" id="pag-next">
-                <a class="page-link" href="#">Siguiente</a>
-              </li>
-              <li class="page-item" id="pag-last">
-                <a class="page-link" href="#">Último</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </td>
-    </tr>
-  </tfoot>
-</table>
+        <tfoot>
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                        Column
+                    </div>
+                    <div class="col">
+                        Column
+                    </div>
+                    <div class="col">
+                        Column
+                    </div>
+                </div>
+            </div>
+
+
+            <tr>
+                <td colspan="6">
+                    <div class="">
+                        <span id="pageInfo"></span>
+                        <nav>
+                            hgsh
+                            <ul class="pagination" id="pagination">
+                                <li class="page-item" id="pag-first">
+                                    skskjh
+                                    <button>Primero</button>
+                                    <a class="page-link" href="#">Primero</a>
+                                </li>
+                                <li class="page-item" id="pag-prev">
+                                    <a class="page-link" href="#">Anterior</a>
+                                </li>
+                                <!-- los números de página se insertan aquí -->
+                                <li class="page-item" id="pag-next">
+                                    <a class="page-link" href="#">Siguiente</a>
+                                </li>
+                                <li class="page-item" id="pag-last">
+                                    <a class="page-link" href="#">Último</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
