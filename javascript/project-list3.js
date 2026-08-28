@@ -1,4 +1,4 @@
-(function) {
+(function () {
     "use strict";
 
     // === AJUSTA ESTA LÍNEA si tu carpeta de componentes se llama distinto ===
@@ -14,17 +14,17 @@
 
     function loadProjects() {
         fetch(API_URL)
-            .then(fuction(response) {
+            .then(function (response) {
                 if (!response.ok) {
                     throw new Error("Error al cargar los datos: " + response.status);
                 }
                 return response.json();
             })
-            .then(fuction(data) {
+            .then(function (data) {
                 allData = data;
                 renderPage(currentPage);
             })
-            .catch(fuction(error) {
+            .catch(function (error) {
                 console.error("Error:", error);
             });
     }
@@ -51,10 +51,10 @@
         row.querySelector("#edit-estado").value = item.estado;
         row.querySelector("#edit-presupuesto").value = item.presupuesto_total;
 
-        row.querySelector("#btn-save").onclick = funcion() {
+        row.querySelector("#btn-save").onclick = function () {
             guardarCambios(item.id);
         };
-        row.querySelector("#btn-cancel").onclick = funcion() {
+        row.querySelector("#btn-cancel").onclick = function () {
             editingId = null;
             renderPage(currentPage);
         };
@@ -82,7 +82,7 @@
             "</td>" +
             '<td><button class="btn btn-outline-primary btn-sm">Editar</button></td>';
 
-        row.querySelector("button").onclick = funcion() {
+        row.querySelector("button").onclick = function () {
             editingId = item.id;
             renderPage(currentPage);
         };
@@ -94,7 +94,7 @@
         var tbody = document.getElementById("projectsBody");
         tbody.innerHTML = "";
 
-        data.forEach(funcion(item) {
+        data.forEach(function (item) {
             var row =
                 editingId === item.id ? crearFilaEdicion(item) : crearFilaNormal(item);
             tbody.appendChild(row);
@@ -112,7 +112,7 @@
             ),
         };
 
-        var index = allData.findIndex(funcion(p) {
+        var index = allData.findIndex(function (p) {
             return p.id === id;
         });
         if (index !== -1) {
@@ -140,7 +140,7 @@
         function setState(li, page, disabled) {
             li.className = "page-item" + (disabled ? " disabled" : "");
             var a = li.querySelector("a");
-            a.onclick = fuction(e) {
+            a.onclick = function (e) {
                 e.preventDefault();
                 if (!disabled) renderPage(page);
             };
@@ -153,7 +153,7 @@
 
         // Elimina los números de página de la vuelta anterior antes de recrearlos
         var existingNumbers = ul.querySelectorAll(".page-item-number");
-        existingNumbers.forEach(funcion(li) {
+        existingNumbers.forEach(function (li) {
             li.remove();
         });
 
@@ -165,8 +165,8 @@
             a.className = "page-link";
             a.href = "#";
             a.textContent = i;
-            (fuction(page) {
-                a.onclick = unction(e) {
+            (function (page) {
+                a.onclick = function (e) {
                     e.preventDefault();
                     renderPage(page);
                 };
@@ -196,7 +196,7 @@
             " registros";
     }
 
-    var TableFilter = (functin() {
+    var TableFilter = (function () {
         var Arr = Array.prototype;
         var input;
 
@@ -205,8 +205,8 @@
             var table1 = document.getElementsByClassName(
                 input.getAttribute("data-table"),
             );
-            Arr.forEach.call(table1, fuction(table) {
-                Arr.forEach.call(table.tBodies, unction(tbody) {
+            Arr.forEach.call(table1, function (table) {
+                Arr.forEach.call(table.tBodies, function (tbody) {
                     Arr.forEach.call(tbody.rows, filter);
                 });
             });
@@ -219,9 +219,9 @@
         }
 
         return {
-            init: fuction() {
+            init: function () {
                 var inputs = document.getElementsByClassName("csearch");
-                Arr.forEach.call(inputs, unction(input) {
+                Arr.forEach.call(inputs, function (input) {
                     input.oninput = onInputEvent;
                 });
             },
@@ -242,18 +242,18 @@
         }
 
         fetch(COMPONENT_URL)
-            .then(fuction(response) {
+            .then(function (response) {
                 if (!response.ok) {
                     throw new Error("Error al cargar el componente: " + response.status);
                 }
                 return response.text();
             })
-            .then(fuction(html) {
+            .then(function (html) {
                 target.innerHTML = html;
                 TableFilter.init();
                 loadProjects();
             })
-            .catch(fuction(error) {
+            .catch(function (error) {
                 console.error("Error:", error);
             });
     }

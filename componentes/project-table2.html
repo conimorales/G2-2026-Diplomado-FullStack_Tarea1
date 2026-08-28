@@ -1,28 +1,28 @@
 <div class="row g-3 mb-3">
-    <div class="col-12 col-md-4 offset-md-8">
-        <input type="text" class="csearch form-control" data-table="ctable" placeholder="Buscador" />
-    </div>
+  <div class="col-12 col-md-4 offset-md-8">
+    <input type="text" class="csearch form-control" data-table="ctable" placeholder="Buscador" />
+  </div>
 </div>
 
 <div class="table-responsive">
-    <table class="ctable table text-small">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Proyecto</th>
-                <th>Responsable</th>
-                <th>Estado</th>
-                <th>Presupuesto Total</th>
-                <th>Editar</th>
-            </tr>
-        </thead>
-        <tbody id="projectsBody">
-            <!-- filas normales: se llenan con JS -->
-        </tbody>
+  <table class="ctable table text-small">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Proyecto</th>
+        <th>Responsable</th>
+        <th>Estado</th>
+        <th>Presupuesto Total</th>
+        <th>Editar</th>
+      </tr>
+    </thead>
+    <tbody id="projectsBody">
+      <!-- filas normales: se llenan con JS -->
+    </tbody>
 
-        <!-- Plantilla de fila de edición: ya definida en el HTML.
+    <!-- Plantilla de fila de edición: ya definida en el HTML.
        El JS solo la clona y llena los valores, no construye el markup. -->
-        <template id="edit-row-template">
+    <template id="edit-row-template">
       <tr>
         <td class="cell-id"></td>
         <td>
@@ -50,29 +50,26 @@
         </td>
       </tr>
     </template>
-    </table>
+  </table>
 </div>
-<<<<<<< HEAD
 
 <div class="pagination-footer">
-    <span id="pageInfo" class="page-info"></span>
-    <nav>
-        <ul class="pagination pagination-sm mb-0 flex-wrap justify-content-center" id="pagination">
-            <li class="page-item" id="pag-first">
-                <a class="page-link" href="#" aria-label="Primero">&laquo;</a>
-            </li>
-            <li class="page-item" id="pag-prev">
-                <a class="page-link" href="#" aria-label="Anterior">&lsaquo;</a>
-            </li>
-            <!-- los números de página se insertan aquí -->
-            <li class="page-item" id="pag-next">
-                <a class="page-link" href="#" aria-label="Siguiente">&rsaquo;</a>
-            </li>
-            <li class="page-item" id="pag-last">
-                <a class="page-link" href="#" aria-label="Último">&raquo;</a>
-            </li>
-        </ul>
-    </nav>
+  <span id="pageInfo" class="page-info"></span>
+  <nav>
+    <ul class="pagination pagination-sm mb-0 flex-wrap justify-content-center" id="pagination">
+      <li class="page-item" id="pag-first">
+        <a class="page-link" href="#" aria-label="Primero">&laquo;</a>
+      </li>
+      <li class="page-item" id="pag-prev">
+        <a class="page-link" href="#" aria-label="Anterior">&lsaquo;</a>
+      </li>
+      <!-- los números de página se insertan aquí -->
+      <li class="page-item" id="pag-next">
+        <a class="page-link" href="#" aria-label="Siguiente">&rsaquo;</a>
+      </li>
+      <li class="page-item" id="pag-last">
+        <a class="page-link" href="#" aria-label="Último">&raquo;</a>
+      </li>
+    </ul>
+  </nav>
 </div>
-=======
->>>>>>> ec50275a109a4316e93fd5d3fcefa5349f32bf8f
