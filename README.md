@@ -62,7 +62,7 @@ en esta carpeta va el detalle de cada componente en el caso que se utilice la vi
 **_ css _**
 en esta carpeta se define el detalle del css utilizado
 
-- base.css es el detalle de css aplicado a todas las vistas
+- base1.css es el detalle de css aplicado a todas las vistas
 - contact.css es el css aplicado a la vista contacto, solamente
 - home.css es el css aplicado en home
 
