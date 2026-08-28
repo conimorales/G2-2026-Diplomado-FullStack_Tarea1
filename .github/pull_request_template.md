@@ -8,16 +8,17 @@
 
 ## Capturas (si aplica)
 
-<!-- Screenshots del antes/después-->
+<!-- Screenshots del antes/después
 
-## Checklist-
+## Checklist
 
-## [ ] El código corre sin errores en consola
 
-## [ ] Probé en mobile y desktop
+## [X] El código corre sin errores en consola
+
+## [X] Probé en mobile y desktop
 
 ## [X] Actualicé el README si era necesario
 
 ## [X] Mis commits siguen Conventional Commits
 
-## [X] Solicité Code Review a un compa
+## [X] Solicité Code Review a otro usuario

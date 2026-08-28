@@ -103,3 +103,11 @@ Pautas de evaluación
 - project-list.html html de listado de proyectos
 - request-detail.html html de detalle de solicitudes
 - Propuesta planificación de soporte.pptx presentación explicada de lo que se quiere lograr finalmente
+
+## Stack
+
+- Eventos y JS propio
+- HTML5 semántico
+- Bootstrap 5 (vía CDN)
+- CSS custom propio (paleta, tipografía, ajustes)
+- JavaScript vanilla
