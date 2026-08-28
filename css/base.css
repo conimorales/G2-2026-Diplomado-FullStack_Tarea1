@@ -40,10 +40,13 @@ h6,
   font-size: 14px;
 }
 
+<<<<<<< HEAD
+=======
 .dataTable {
   font-size: 12px;
 }
 
+>>>>>>> ec50275a109a4316e93fd5d3fcefa5349f32bf8f
 .comparacion-tipos .card {
   height: 100%;
 }
@@ -105,6 +108,16 @@ nav.navbar {
 }
 
 @media (min-width: 992px) {
+<<<<<<< HEAD
+    .navbar-brand {
+        font-size: 16px
+    }
+    ;
+    body {
+        font-size: 1px;
+    }
+}
+=======
   .navbar-brand {
     font-size: 16px;
   }
@@ -130,3 +143,4 @@ nav.navbar {
     font-size: 10px;
   }
 }
+>>>>>>> ec50275a109a4316e93fd5d3fcefa5349f32bf8f

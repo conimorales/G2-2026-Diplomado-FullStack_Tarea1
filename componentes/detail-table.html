@@ -1,0 +1,77 @@
+<!-- <div class="mb-3">
+    <label for="filtroEstado" class="form-label">Filtrar por estado</label>
+    <select id="filtroEstado" class="form-select">
+        <option value="">Todos</option>
+        <option value="En proceso">En proceso</option>
+        <option value="Finalizado">Finalizado</option>
+    </select>
+</div>
+
+<div class="table-responsive">
+    <table id="tablaDetalleSolicitudes" class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Solicitud</th>
+                <th>Descripción Solicitud</th>
+                <th>Sistema</th>
+                <th>CER</th>
+                <th>Estado</th>
+                <th>Impacto Financiero</th>
+                <th>Fecha Creación</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div> -->
+
+<div class="row g-3 mb-3">
+    <div class="col-12 col-md-4 offset-md-8">
+        <input type="text" class="csearch form-control" data-table="ctable" placeholder="Buscador" />
+    </div>
+</div>
+
+<div class="table-responsive">
+
+    <table id="tablaDetalleSolicitudes" class="table table-striped ctable table text-small">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Solicitud</th>
+                <th>Descripción Solicitud</th>
+                <th>Sistema</th>
+                <th>CER</th>
+                <th>Estado</th>
+                <th>Impacto Financiero</th>
+                <th>Fecha Creación</th>
+            </tr>
+        </thead>
+        <tbody id="projectsBody2">
+            <!-- filas normales: se llenan con JS -->
+        </tbody>
+    </table>
+
+
+</div>
+
+<div class="pagination-footer">
+    <span id="pageInfo" class="page-info"></span>
+    <nav>
+        <ul class="pagination pagination-sm mb-0 flex-wrap justify-content-center" id="pagination">
+            <li class="page-item" id="pag-first">
+                <a class="page-link" href="#" aria-label="Primero">&laquo;</a>
+            </li>
+            <li class="page-item" id="pag-prev">
+                <a class="page-link" href="#" aria-label="Anterior">&lsaquo;</a>
+            </li>
+            <!-- los números de página se insertan aquí -->
+            <li class="page-item" id="pag-next">
+                <a class="page-link" href="#" aria-label="Siguiente">&rsaquo;</a>
+            </li>
+            <li class="page-item" id="pag-last">
+                <a class="page-link" href="#" aria-label="Último">&raquo;</a>
+            </li>
+        </ul>
+    </nav>
+</div>
