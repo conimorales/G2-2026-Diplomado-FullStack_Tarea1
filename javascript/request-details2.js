@@ -1,16 +1,14 @@
 (function() {
     "use strict";
 
-    // === AJUSTA ESTA LÍNEA si tu carpeta de componentes se llama distinto ===
-    var COMPONENT_URL = "componentes/project-table2.html";
-    var COMPONENT_TARGET = "tabla-proyectos";
+    var COMPONENT_URL = "componentes/detail-table.html";
+    var COMPONENT_TARGET = "tabla-detalle-solicitudes";
 
     var ITEMS_PER_PAGE = 10;
     var allData = [];
     var currentPage = 1;
-    var editingId = null;
 
-    var API_URL = "data/project-list.json";
+    var API_URL = "data/request-details.json";
 
     function loadProjects() {
         fetch(API_URL)
@@ -37,93 +35,32 @@
         });
     }
 
-    // Construye la fila de edición clonando el <template id="edit-row-template">
-    // que viene dentro del componente project-table2.html, en vez de armar
-    // el markup con innerHTML.
-    function crearFilaEdicion(item) {
-        var template = document.getElementById("edit-row-template");
-        var fragment = template.content.cloneNode(true);
-        var row = fragment.querySelector("tr");
-
-        row.querySelector(".cell-id").textContent = item.id;
-        row.querySelector("#edit-proyecto").value = item.proyecto;
-        row.querySelector("#edit-responsable").value = item.responsable;
-        row.querySelector("#edit-estado").value = item.estado;
-        row.querySelector("#edit-presupuesto").value = item.presupuesto_total;
-
-        row.querySelector("#btn-save").onclick = function() {
-            guardarCambios(item.id);
-        };
-        row.querySelector("#btn-cancel").onclick = function() {
-            editingId = null;
-            renderPage(currentPage);
-        };
-
-        return row;
-    }
-
+    // === AJUSTA los nombres de propiedad (item.xxx) si tu JSON usa otros nombres ===
     function crearFilaNormal(item) {
         var row = document.createElement("tr");
         row.innerHTML =
-            "<td>" +
-            item.id +
-            "</td>" +
-            "<td>" +
-            item.proyecto +
-            "</td>" +
-            "<td>" +
-            item.responsable +
-            "</td>" +
-            "<td>" +
-            item.estado +
-            "</td>" +
-            "<td>" +
-            formatCLP(item.presupuesto_total) +
-            "</td>" +
-            '<td><button class="btn btn-outline-primary btn-sm">Editar</button></td>';
-
-        row.querySelector("button").onclick = function() {
-            editingId = item.id;
-            renderPage(currentPage);
-        };
-
+            "<td>" + item.id + "</td>" +
+            "<td>" + item.nombre + "</td>" +
+            "<td>" + item.descripcion + "</td>" +
+            "<td>" + item.sistema + "</td>" +
+            "<td>" + item.cer + "</td>" +
+            "<td>" + item.estado + "</td>" +
+            "<td>" + formatCLP(item.impactoFinanciero) + "</td>" +
+            "<td>" + item.fechaCreacion + "</td>";
         return row;
     }
 
+
+
     function renderTable(data) {
-        var tbody = document.getElementById("projectsBody");
+        var tbody = document.getElementById("projectsBody2");
         tbody.innerHTML = "";
 
         data.forEach(function(item) {
-            var row = editingId === item.id ? crearFilaEdicion(item) : crearFilaNormal(item);
-            tbody.appendChild(row);
+            tbody.appendChild(crearFilaNormal(item));
         });
     }
 
-    function guardarCambios(id) {
-        var cambios = {
-            proyecto: document.getElementById("edit-proyecto").value,
-            responsable: document.getElementById("edit-responsable").value,
-            estado: document.getElementById("edit-estado").value,
-            presupuesto_total: parseInt(document.getElementById("edit-presupuesto").value, 10),
-        };
-
-        var index = allData.findIndex(function(p) {
-            return p.id === id;
-        });
-        if (index !== -1) {
-            allData[index] = Object.assign({}, allData[index], cambios);
-        }
-
-        editingId = null;
-        renderPage(currentPage);
-    }
-
-    // Los botones "«" (primero), "‹" (anterior), "›" (siguiente) y "»" (último)
-    // ya existen en el componente HTML (ids: pag-first, pag-prev, pag-next, pag-last).
-    // Aquí solo se habilitan/deshabilitan y se les asigna el evento.
-    // Los números de página SÍ se siguen creando dinámicamente, porque
-    // dependen de la cantidad de datos, y se insertan antes del botón "Siguiente".
     function renderPagination(totalItems) {
         var totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
 
@@ -147,7 +84,6 @@
         setState(next, currentPage + 1, currentPage === totalPages);
         setState(last, totalPages, currentPage === totalPages);
 
-        // Elimina los números de página de la vuelta anterior antes de recrearlos
         var existingNumbers = ul.querySelectorAll(".page-item-number");
         existingNumbers.forEach(function(li) {
             li.remove();
@@ -214,10 +150,6 @@
         };
     })();
 
-    // 1) Carga el componente (project-table2.html) dentro de #tabla-proyectos.
-    // 2) Solo cuando ya está insertado en el DOM, arranca todo lo demás
-    //    (búsqueda, carga de datos, paginación), porque antes de esto
-    //    projectsBody / pagination / edit-row-template no existen todavía.
     function init() {
         var target = document.getElementById(COMPONENT_TARGET);
         if (!target) {
