@@ -1,25 +1,3 @@
-:root {
-    --fuente-titulo: 'Poppins', sans-serif;
-    --fuente-texto: 'Inter', sans-serif;
-    --color-primary: #5B4FE0;
-    --color-primary-dark: #4438C4;
-    --color-primary-light: #EEEBFC;
-    --color-blue: #3B82F6;
-    --color-blue-light: #EAF2FE;
-    --color-green: #17A673;
-    --color-green-light: #E9F8F1;
-    --color-red: #E0503A;
-    --color-red-light: #FCEBE8;
-    --color-ink: #1E1B3A;
-    --color-text: #4B4869;
-    --color-muted: #8583A3;
-    --color-border: #E7E5F5;
-    --color-surface: #F7F6FD;
-    --radius-lg: 18px;
-    --radius-md: 12px;
-    --radius-sm: 8px;
-}
-
 .badge.text-bg-primary {
     background-color: var(--color-primary-light) !important;
     color: var(--color-primary-dark) !important;

@@ -8,9 +8,77 @@
     var allData = [];
     var currentPage = 1;
 
-    var API_URL = "data/request-details.json";
+    // === Antes: var API_URL = "data/request-details.json"; ===
+    // Ahora consumimos JSONPlaceholder (API de prueba, sin key)
+    var API_URL = "https://jsonplaceholder.typicode.com/posts";
+
+    // JSONPlaceholder no tiene sistema/cer/estado/fechaCreacion,
+    // así que los simulamos a partir del id del post.
+    var SISTEMAS = ["SAP", "Power BI", "SIGA"];
+    var ESTADOS = ["En proceso", "Finalizado"];
+
+    function fechaSimulada(id) {
+        // Genera fechas incrementales a partir de 2026-07-01, solo para tener algo coherente
+        var fecha = new Date(2026, 6, 1);
+        fecha.setDate(fecha.getDate() + id);
+        return fecha.toISOString().slice(0, 10); // formato YYYY-MM-DD
+    }
+
+    function mapPost(post) {
+        return {
+            id: post.id,
+            nombre: post.title,
+            descripcion: post.body,
+            sistema: SISTEMAS[post.id % SISTEMAS.length],
+            cer: "12" + (30 + post.id),
+            estado: ESTADOS[post.id % ESTADOS.length],
+            impactoFinanciero: post.id % 2 === 0,
+            fechaCreacion: fechaSimulada(post.id),
+        };
+    }
+
+    function showLoading() {
+        var loading = document.getElementById("loadingState");
+        var error = document.getElementById("errorState");
+        var wrapper = document.getElementById("tableWrapper");
+        var footer = document.getElementById("paginationFooter");
+
+        if (loading) loading.classList.remove("d-none");
+        if (error) error.classList.add("d-none");
+        if (wrapper) wrapper.classList.add("d-none");
+        if (footer) footer.classList.add("d-none");
+    }
+
+    function showTable() {
+        var loading = document.getElementById("loadingState");
+        var error = document.getElementById("errorState");
+        var wrapper = document.getElementById("tableWrapper");
+        var footer = document.getElementById("paginationFooter");
+
+        if (loading) loading.classList.add("d-none");
+        if (error) error.classList.add("d-none");
+        if (wrapper) wrapper.classList.remove("d-none");
+        if (footer) footer.classList.remove("d-none");
+    }
+
+    function showError(mensaje) {
+        var loading = document.getElementById("loadingState");
+        var error = document.getElementById("errorState");
+        var wrapper = document.getElementById("tableWrapper");
+        var footer = document.getElementById("paginationFooter");
+
+        if (loading) loading.classList.add("d-none");
+        if (wrapper) wrapper.classList.add("d-none");
+        if (footer) footer.classList.add("d-none");
+        if (error) {
+            error.textContent = mensaje;
+            error.classList.remove("d-none");
+        }
+    }
 
     function loadProjects() {
+        showLoading();
+
         fetch(API_URL)
             .then(function(response) {
                 if (!response.ok) {
@@ -19,20 +87,18 @@
                 return response.json();
             })
             .then(function(data) {
-                allData = data;
+                allData = data.map(mapPost);
+                showTable();
                 renderPage(currentPage);
             })
             .catch(function(error) {
                 console.error("Error:", error);
+                showError("No se pudieron cargar las solicitudes. Ocurrió un error al cargar los datos.");
             });
     }
 
-    function formatCLP(valor) {
-        return valor.toLocaleString("es-CL", {
-            style: "currency",
-            currency: "CLP",
-            minimumFractionDigits: 0,
-        });
+    function formatImpacto(valor) {
+        return valor ? "Sí" : "No";
     }
 
     // === AJUSTA los nombres de propiedad (item.xxx) si tu JSON usa otros nombres ===
@@ -45,12 +111,10 @@
             "<td>" + item.sistema + "</td>" +
             "<td>" + item.cer + "</td>" +
             "<td>" + item.estado + "</td>" +
-            "<td>" + formatCLP(item.impactoFinanciero) + "</td>" +
+            "<td>" + formatImpacto(item.impactoFinanciero) + "</td>" +
             "<td>" + item.fechaCreacion + "</td>";
         return row;
     }
-
-
 
     function renderTable(data) {
         var tbody = document.getElementById("projectsBody2");
