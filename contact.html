@@ -16,7 +16,7 @@
     <!-- FONTAWESOME ICONOS -->
     <script src="https://kit.fontawesome.com/49ce9d820e.js" crossorigin="anonymous"></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="css/base1.css">
+    <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/contact.css">
 
 </head>
@@ -46,7 +46,7 @@
                                     </label>
 
                                     <input type="email" class="form-control" id="correo" name="correo"
-                                        placeholder="usuario@empresa.cl" required>
+                                        placeholder="usuario@empresa.cl" alt="correo" required>
                                 </div>
 
                                 <!-- Módulo -->
@@ -90,7 +90,8 @@
                                     </label>
 
                                     <input type="text" class="form-control" id="nombre" name="nombre"
-                                        placeholder="Ej: Reclasificación de mano de obra" required>
+                                        alt="nombre_solicitud" placeholder="Ej: Reclasificación de mano de obra"
+                                        required>
                                 </div>
 
                                 <!-- Descripción -->
@@ -106,13 +107,13 @@
                             </div>
 
                             <div class=" btn-margin-top">
+                                <button type="submit" class="btn btn-primary col-12 col-sm-4 col-lg-4 g-2">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    Enviar solicitud </button>
 
                                 <button type="reset" class="btn btn-outline-secondary col-12 col-sm-4 col-lg-4 g-2">
                                     Cancelar </button>
 
-                                <button type="submit" class="btn btn-primary col-12 col-sm-4 col-lg-4 g-2">
-                                    <i class="fa-solid fa-circle-check"></i>
-                                    Enviar solicitud </button>
 
                             </div>
                             <div id="mensajeConfirmacion" class="alert alert-success d-none mt-3" role="alert">
